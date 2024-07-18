@@ -1,0 +1,67 @@
+.historic-trades {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.header-cell {
+  background-color: #555;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.trades-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.date-row {
+  color: white;
+  background-color: transparent;
+  height: 50px;
+}
+.date-row .pnl {
+  display: none;
+}
+
+.trade-row {
+  border-bottom: 1px solid #fff;
+}
+
+.trade-row td {
+  border: 1px solid #555;
+  padding: 8px;
+  color: #fff;
+}
+
+.profit {
+  color: green;
+}
+
+.loss {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .trade-row td {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .trades-table th:nth-child(2), /* Trade ID */
+  .trades-table th:nth-child(5), /* Execution Date/Time */
+  .trades-table th:nth-child(6), /* Total Cost */
+  .trades-table td:nth-child(2),
+  .trades-table td:nth-child(5),
+  .trades-table td:nth-child(6) {
+    display: none;
+  }
+
+  .date-row .pnl {
+    display: inline;
+  }
+}

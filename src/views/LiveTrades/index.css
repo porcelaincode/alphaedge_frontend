@@ -1,0 +1,11 @@
+.live {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .live {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,73 @@
+.commentary {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.live-commentary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0 0 0 10px;
+  border-radius: 5px;
+}
+
+.trade-item {
+  padding: 5px;
+  display: flex;
+  gap: 5px;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.trade-item.fade {
+  opacity: 0;
+}
+
+.timestamp {
+  color: #444;
+  font-weight: bold;
+}
+
+.roller-enter-active,
+.roller-leave-active {
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.roller-enter-from {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.roller-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.roller-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.roller-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.roller-move {
+  transition: transform 0.5s ease;
+}
+
+@media (max-width: 1024px) {
+  .commentary {
+    width: 100%;
+    height: 40vh;
+  }
+}

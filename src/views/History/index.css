@@ -1,0 +1,11 @@
+.history {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+}
+
+@media (max-width: 768px) {
+  .history {
+    display: flex;
+  }
+}
