@@ -11,6 +11,7 @@ export function connectWebSocket() {
 
   socket.value.onopen = () => {
     console.log('WebSocket connection opened')
+    tradesStore.isConnected = true
   }
 
   socket.value.onmessage = (event) => {
@@ -20,6 +21,7 @@ export function connectWebSocket() {
 
   socket.value.onclose = () => {
     console.log('WebSocket connection closed')
+    tradesStore.isConnected = false
   }
 
   socket.value.onerror = (error) => {

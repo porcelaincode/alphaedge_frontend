@@ -14,7 +14,6 @@
       </thead>
       <tbody>
         <template v-for="day in tradeBook">
-          {{ console.log(day) }}
           <tr class="date-row">
             <td colspan="6" class="date">
               {{ day.date }}

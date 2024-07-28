@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  margin: 55px auto;
+}
+
+.widget {
+  height: 20px;
+  width: 80px;
+  border-radius: 3px;
+  padding: 5px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #33333366;
+
+  .status {
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    margin: 0 10px 0 0;
+  }
+
+  .status.active {
+    background-color: green;
+  }
+  .status.inactive {
+    background-color: red;
+  }
+
+  .text {
+    font-size: 1rem;
+    color: #dddddd;
+  }
+}

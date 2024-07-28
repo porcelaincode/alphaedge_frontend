@@ -20,7 +20,7 @@ export function generateTrade() {
       second: '2-digit'
     }),
     text: tradingPhrases[Math.floor(Math.random() * tradingPhrases.length)],
-    pnl: Math.random() * 200 - 100 // Random profit/loss for demonstration
+    pnl: Math.random() * 2000 - 100 // Random profit/loss for demonstration
   }
   return trade
 }

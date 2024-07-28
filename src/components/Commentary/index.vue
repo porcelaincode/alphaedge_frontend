@@ -3,7 +3,7 @@
     <div class="live-commentary">
       <transition-group name="roller" tag="div" class="trade-list">
         <div
-          v-for="(trade, index) in recentTrades"
+          v-for="(trade, index) in trades"
           :key="trade.timestamp"
           class="trade-item"
           :class="{ fade: index < trades.length - 5 }"
@@ -17,24 +17,11 @@
 </template>
 
 <script setup>
-import { computed, ref, watch } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useTradesStore } from '@/stores/trades'
 
 const tradesStore = useTradesStore()
-
-const trades = ref([])
-
-watch(
-  () => tradesStore.trades,
-  (newTrades) => {
-    trades.value = newTrades
-  },
-  { immediate: true, deep: true }
-)
-
-const recentTrades = computed(() => {
-  return trades.value.slice(-5)
-})
+const { trades } = storeToRefs(tradesStore)
 </script>
 
 <style scoped>

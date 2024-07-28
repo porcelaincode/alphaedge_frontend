@@ -1,22 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import LiveTrades from '../views/LiveTrades/index.vue'
-import History from '../views/History/index.vue'
+import { app } from './appRoutes'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'live',
-      component: LiveTrades
-    },
-    {
-      path: '/history',
-      name: 'history',
-      component: History
-    }
-  ]
+  routes: [...app]
+})
+
+router.beforeEach((to, from) => {
+  document.title = to.meta.title || import.meta.env.DEFAULT_TITLE
 })
 
 export default router

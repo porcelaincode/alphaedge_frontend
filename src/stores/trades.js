@@ -1,12 +1,15 @@
 import { defineStore } from 'pinia'
 import { generateTradeData } from '@/services/mock-trades'
 
+const initialState = {
+  trades: [],
+  tradeBook: [],
+  isConnected: false
+}
+
 export const useTradesStore = defineStore('trades', {
   persist: true,
-  state: () => ({
-    trades: [],
-    tradeBook: []
-  }),
+  state: () => initialState,
   actions: {
     addTrade(trade) {
       this.trades.push(trade)
