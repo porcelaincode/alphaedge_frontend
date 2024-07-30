@@ -7,7 +7,9 @@ const socket = ref(null)
 
 export function connectWebSocket() {
   const tradesStore = useTradesStore()
-  socket.value = new WebSocket('wss://your-websocket-url')
+  console.log('import.meta.env.WEBSOCKET_BASE_URL: ', import.meta.env.VITE_APP_WEBSOCKET_BASE_URL)
+
+  socket.value = new WebSocket(import.meta.env.VITE_APP_WEBSOCKET_BASE_URL)
 
   socket.value.onopen = () => {
     console.log('WebSocket connection opened')
